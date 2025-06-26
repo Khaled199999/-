@@ -1,0 +1,67 @@
+<!-- الكود أعلاه يبقى كما هو بدون تعديل -->
+
+<!-- نظام تسجيل الدخول وتتبع النقاط -->
+<div id="user-auth" style="margin-bottom: 2rem;">
+  <h3>تسجيل الدخول أو إنشاء حساب</h3>
+  <input type="text" id="fullName" placeholder="الاسم الثلاثي" style="padding: 0.5rem; font-size: 1rem; margin: 0.5rem 0; width: 100%; max-width: 300px;">
+  <button onclick="loginUser()">دخول</button>
+  <p id="loginStatus" style="margin-top: 0.5rem; color: green;"></p>
+</div>
+
+<div id="userPanel" style="display:none; margin-bottom: 2rem; background:#f4fff7; padding: 1rem; border: 1px solid #ccc; border-radius: 8px;">
+  <p><strong>مرحباً، <span id="userName"></span>!</strong></p>
+  <p>📊 تقدمك في التعلم: <span id="progressPercent">0%</span></p>
+  <p>⭐ نقاطك: <span id="userPoints">0</span> نقطة</p>
+</div>
+
+<script>
+let currentUser = null;
+const progressKey = 'arabicSiteProgress';
+
+function loginUser() {
+  const fullName = document.getElementById('fullName').value.trim();
+  if (!fullName || fullName.split(' ').length < 2) {
+    alert('يرجى إدخال الاسم الثلاثي على الأقل.');
+    return;
+  }
+  currentUser = fullName;
+  localStorage.setItem('arabicUser', fullName);
+  if (!localStorage.getItem(`${progressKey}_${fullName}`)) {
+    localStorage.setItem(`${progressKey}_${fullName}`, JSON.stringify({ points: 0, progress: 0 }));
+  }
+  updateUserPanel();
+}
+
+function updateUserPanel() {
+  const data = JSON.parse(localStorage.getItem(`${progressKey}_${currentUser}`));
+  document.getElementById('user-auth').style.display = 'none';
+  document.getElementById('userPanel').style.display = 'block';
+  document.getElementById('userName').textContent = currentUser;
+  document.getElementById('progressPercent').textContent = `${data.progress}%`;
+  document.getElementById('userPoints').textContent = data.points;
+}
+
+function increaseProgress(pointsToAdd = 10, percentToAdd = 20) {
+  if (!currentUser) return;
+  const key = `${progressKey}_${currentUser}`;
+  const data = JSON.parse(localStorage.getItem(key));
+  data.points += pointsToAdd;
+  data.progress = Math.min(data.progress + percentToAdd, 100);
+  localStorage.setItem(key, JSON.stringify(data));
+  updateUserPanel();
+}
+
+window.onload = function () {
+  const saved = localStorage.getItem('arabicUser');
+  if (saved) {
+    currentUser = saved;
+    updateUserPanel();
+  }
+  const completions = document.querySelectorAll('p');
+  completions.forEach(p => {
+    if (p.textContent.includes('لقد أكملت المرحلة')) {
+      setTimeout(() => increaseProgress(10, 20), 500);
+    }
+  });
+};
+</script>
