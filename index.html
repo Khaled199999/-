@@ -1,89 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>موقع تعليم اللغة العربية للأطفال</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body style="font-family: Arial; direction: rtl; padding: 2rem; background: #fefefe;">
+<body>
+  <header>
+    <h1>🌟 موقع تعليم اللغة العربية للأطفال 🌟</h1>
+    <nav>
+      <a href="#noorania">📚 القاعدة النورانية</a>
+      <a href="#words">📖 الكلمات اليومية</a>
+      <a href="#certificate">📜 الشهادة</a>
+    </nav>
+  </header>
 
-<div id="user-auth">
-  <h3>تسجيل الدخول أو إنشاء حساب</h3>
-  <input type="text" id="fullName" placeholder="الاسم الثلاثي" />
-  <button onclick="loginUser()">دخول</button>
-</div>
+  <section id="noorania">
+    <h2>📚 القاعدة النورانية</h2>
+    <p>مثال: حرف الألف</p>
+    <button onclick="playSound()">🔊 انطق الحرف</button>
+  </section>
 
-<div id="userPanel" style="display:none;">
-  <p>مرحباً، <span id="userName"></span>!</p>
-  <p>تقدّمك: <span id="progressPercent">0%</span> | نقاطك: <span id="userPoints">0</span></p>
-</div>
+  <section id="words">
+    <h2>📖 الكلمات اليومية</h2>
+    <p>مكان الكلمات اليومية لاحقاً</p>
+  </section>
 
-<h2>📚 القاعدة النورانية</h2>
-<p>شرح الحروف والتكرار</p>
-<button onclick="increaseProgress()">أنهيت هذه المرحلة</button>
+  <section id="certificate" style="display:none;">
+    <h2>🎉 تهانينا!</h2>
+    <p>لقد أتممت جميع المراحل بنجاح 🎓</p>
+  </section>
 
-<h2>📖 الكلمات اليومية</h2>
-<p>مجموعة كلمات وصور ونطق</p>
-<button onclick="increaseProgress()">أنهيت هذه المرحلة</button>
+  <button onclick="showCertificate()">🎓 إنهاء المراحل</button>
 
-<h2>🧩 التمارين التفاعلية</h2>
-<p>أسئلة وتمارين تفاعلية</p>
-<button onclick="increaseProgress()">أنهيت هذه المرحلة</button>
-
-<h2>📖 القراءة والتعبير</h2>
-<p>قراءة نصوص وأسئلة</p>
-<button onclick="increaseProgress()">أنهيت هذه المرحلة</button>
-
-<h2>🎮 الألعاب والتحديات</h2>
-<p>ألعاب تركيب الكلمات</p>
-<button onclick="increaseProgress()">أنهيت هذه المرحلة</button>
-
-<script>
-let currentUser = null;
-const progressKey = 'arabicSiteProgress';
-
-function loginUser() {
-  const fullName = document.getElementById('fullName').value.trim();
-  if (!fullName || fullName.split(' ').length < 2) {
-    alert('أدخل الاسم الثلاثي كاملاً');
-    return;
-  }
-  currentUser = fullName;
-  localStorage.setItem('arabicUser', fullName);
-  if (!localStorage.getItem(`${progressKey}_${fullName}`)) {
-    localStorage.setItem(`${progressKey}_${fullName}`, JSON.stringify({ points: 0, progress: 0 }));
-  }
-  updateUserPanel();
-}
-
-function updateUserPanel() {
-  const data = JSON.parse(localStorage.getItem(`${progressKey}_${currentUser}`));
-  document.getElementById('user-auth').style.display = 'none';
-  document.getElementById('userPanel').style.display = 'block';
-  document.getElementById('userName').textContent = currentUser;
-  document.getElementById('progressPercent').textContent = `${data.progress}%`;
-  document.getElementById('userPoints').textContent = data.points;
-}
-
-function increaseProgress(pointsToAdd = 10, percentToAdd = 20) {
-  if (!currentUser) return;
-  const key = `${progressKey}_${currentUser}`;
-  const data = JSON.parse(localStorage.getItem(key));
-  data.points += pointsToAdd;
-  data.progress = Math.min(data.progress + percentToAdd, 100);
-  localStorage.setItem(key, JSON.stringify(data));
-  updateUserPanel();
-}
-
-window.onload = function() {
-  const saved = localStorage.getItem('arabicUser');
-  if (saved) {
-    currentUser = saved;
-    updateUserPanel();
-  }
-};
-</script>
-
+  <script src="js/script.js"></script>
 </body>
 </html>
