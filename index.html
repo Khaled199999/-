@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>موقع تعليم اللغة العربية للأطفال</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+<header>
+  <h1>🌟 موقع تعليم اللغة العربية للأطفال 🌟</h1>
+  <nav>
+    <a href="#noorania">📚 القاعدة النورانية</a>
+    <a href="#words">📖 الكلمات اليومية</a>
+    <a href="#sentences">🗣️ الجُمل اليومية</a>
+    <a href="#quiz">📝 التمارين</a>
+    <a href="#game">🎮 الألعاب</a>
+    <a href="#certificate">📜 الشهادة</a>
+  </nav>
+</header>
 <body>
-  <header>
-    <h1>🌟 موقع تعليم اللغة العربية للأطفال 🌟</h1>
-    <nav>
-      <a href="#noorania">📚 القاعدة النورانية</a>
-      <a href="#words">📖 الكلمات اليومية</a>
-      <a href="#certificate">📜 الشهادة</a>
-    </nav>
-  </header>
 
   <section id="noorania">
     <h2>📚 القاعدة النورانية</h2>
@@ -166,11 +163,45 @@
     <tr><td>دراجة</td><td><button onclick="playWord('bicycle')">🔊</button></td></tr>
   </table>
 
-  </section>
+<section id="sentences">
+  <h2>🗣️ الجُمل اليومية</h2>
+  <table>
+    <tr><th>الجُملة</th><th>استماع</th></tr>
+    <tr><td>السلام عليكم</td><td><button onclick="playSentence('greeting1')">🔊</button></td></tr>
+    <tr><td>كيف حالك؟</td><td><button onclick="playSentence('greeting2')">🔊</button></td></tr>
+    <tr><td>أنا بخير، شكراً.</td><td><button onclick="playSentence('greeting3')">🔊</button></td></tr>
+    <tr><td>ما اسمك؟</td><td><button onclick="playSentence('greeting4')">🔊</button></td></tr>
+    <tr><td>إلى اللقاء!</td><td><button onclick="playSentence('greeting5')">🔊</button></td></tr>
+  </table>
+</section>
 
-  <section id="certificate" style="display:none;">
-    <h2>🎉 تهانينا!</h2>
-    <p>لقد أتممت جميع المراحل بنجاح 🎓</p>
+<section id="quiz">
+  <h2>📝 تمرين تفاعلي</h2>
+  <p>ما هو جمع كلمة "كتاب"؟</p>
+  <button onclick="checkAnswer('دفتر')">دفتر</button>
+  <button onclick="checkAnswer('كتب')">كتب</button>
+  <button onclick="checkAnswer('قلم')">قلم</button>
+  <p id="quizResult"></p>
+</section>
+
+<section id="game">
+  <h2>🎮 لعبة تكوين كلمات</h2>
+  <p>كوّن أكبر عدد كلمات من الحروف: ب ح ر</p>
+  <input type="text" id="wordInput" placeholder="أدخل كلمة">
+  <button onclick="checkGameWord()">تحقّق</button>
+  <p id="gameResult"></p>
+</section>
+
+<section id="certificate" style="display:none;">
+  <h2>🎉 تهانينا!</h2>
+  <p>لقد أكملت جميع المراحل بنجاح!</p>
+  <p>أدخل اسمك للحصول على الشهادة:</p>
+  <input type="text" id="childName" placeholder="اسم الطفل">
+  <button onclick="showFinalCertificate()">عرض الشهادة</button>
+  <div id="finalCert"></div>
+</section>
+
+<button onclick="finishAll()">✅ أنهيت جميع المراحل</button>
   </section>
 
   <button onclick="showCertificate()">🎓 إنهاء المراحل</button>
@@ -183,6 +214,43 @@
     function playWord(word) {
   const audio = new Audio('audio/words/' + word + '.mp3');
   audio.play();
+}
+
+    function playSentence(sent) {
+  const audio = new Audio('audio/sentences/' + sent + '.mp3');
+  audio.play();
+}
+
+function checkAnswer(answer) {
+  const result = document.getElementById('quizResult');
+  if (answer === 'كتب') {
+    result.textContent = 'إجابة صحيحة! ✔️';
+  } else {
+    result.textContent = 'إجابة خاطئة! ❌ حاول مرة أخرى.';
+  }
+}
+
+function checkGameWord() {
+  const input = document.getElementById('wordInput').value.trim();
+  const validWords = ['بحر', 'حبر', 'برح', 'ربح', 'بر', 'بح', 'حب', 'حر'];
+  const result = document.getElementById('gameResult');
+  if (validWords.includes(input)) {
+    result.textContent = 'كلمة صحيحة! ✔️';
+  } else {
+    result.textContent = 'جرب مرة أخرى.';
+  }
+}
+
+function finishAll() {
+  document.getElementById('certificate').style.display = 'block';
+}
+
+function showFinalCertificate() {
+  const name = document.getElementById('childName').value.trim();
+  if (name) {
+    document.getElementById('finalCert').innerHTML =
+      '<h3>🌟 شهادة إتمام 🌟</h3><p>نُقدّم هذه الشهادة للطالب:</p><strong>' + name + '</strong>';
+  }
 }
 
   </script>
