@@ -31,3 +31,8 @@ button {
   margin-top: 1rem;
   cursor: pointer;
 }
+input {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  width: 200px;
+}
