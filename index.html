@@ -20,7 +20,44 @@
     <h2>📚 القاعدة النورانية</h2>
     <p>مثال: حرف الألف</p>
     <button onclick="playSound()">🔊 انطق الحرف</button>
-  </section>
+    <section id="noorania">
+  <h2>📚 القاعدة النورانية</h2>
+  <table>
+    <tr>
+      <th>الحرف</th>
+      <th>الاستماع</th>
+    </tr>
+    <tr><td>ا</td><td><button onclick="playLetter('alef')">🔊</button></td></tr>
+    <tr><td>ب</td><td><button onclick="playLetter('baa')">🔊</button></td></tr>
+    <tr><td>ت</td><td><button onclick="playLetter('taa')">🔊</button></td></tr>
+    <tr><td>ث</td><td><button onclick="playLetter('thaa')">🔊</button></td></tr>
+    <tr><td>ج</td><td><button onclick="playLetter('jeem')">🔊</button></td></tr>
+    <tr><td>ح</td><td><button onclick="playLetter('haa')">🔊</button></td></tr>
+    <tr><td>خ</td><td><button onclick="playLetter('khaa')">🔊</button></td></tr>
+    <tr><td>د</td><td><button onclick="playLetter('dal')">🔊</button></td></tr>
+    <tr><td>ذ</td><td><button onclick="playLetter('thal')">🔊</button></td></tr>
+    <tr><td>ر</td><td><button onclick="playLetter('raa')">🔊</button></td></tr>
+    <tr><td>ز</td><td><button onclick="playLetter('zaay')">🔊</button></td></tr>
+    <tr><td>س</td><td><button onclick="playLetter('seen')">🔊</button></td></tr>
+    <tr><td>ش</td><td><button onclick="playLetter('sheen')">🔊</button></td></tr>
+    <tr><td>ص</td><td><button onclick="playLetter('saad')">🔊</button></td></tr>
+    <tr><td>ض</td><td><button onclick="playLetter('daad')">🔊</button></td></tr>
+    <tr><td>ط</td><td><button onclick="playLetter('taa2')">🔊</button></td></tr>
+    <tr><td>ظ</td><td><button onclick="playLetter('zaa2')">🔊</button></td></tr>
+    <tr><td>ع</td><td><button onclick="playLetter('ain')">🔊</button></td></tr>
+    <tr><td>غ</td><td><button onclick="playLetter('ghain')">🔊</button></td></tr>
+    <tr><td>ف</td><td><button onclick="playLetter('faa')">🔊</button></td></tr>
+    <tr><td>ق</td><td><button onclick="playLetter('qaaf')">🔊</button></td></tr>
+    <tr><td>ك</td><td><button onclick="playLetter('kaaf')">🔊</button></td></tr>
+    <tr><td>ل</td><td><button onclick="playLetter('laam')">🔊</button></td></tr>
+    <tr><td>م</td><td><button onclick="playLetter('meem')">🔊</button></td></tr>
+    <tr><td>ن</td><td><button onclick="playLetter('noon')">🔊</button></td></tr>
+    <tr><td>ه</td><td><button onclick="playLetter('haa2')">🔊</button></td></tr>
+    <tr><td>و</td><td><button onclick="playLetter('waaw')">🔊</button></td></tr>
+    <tr><td>ي</td><td><button onclick="playLetter('yaa')">🔊</button></td></tr>
+    <tr><td>ء</td><td><button onclick="playLetter('hamza')">🔊</button></td></tr>
+  </table>
+</section>
 
   <section id="words">
     <h2>📖 الكلمات اليومية</h2>
@@ -34,6 +71,11 @@
 
   <button onclick="showCertificate()">🎓 إنهاء المراحل</button>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js">
+    function playLetter(letter) {
+  const audio = new Audio('audio/' + letter + '.mp3');
+  audio.play();
+}
+  </script>
 </body>
 </html>
