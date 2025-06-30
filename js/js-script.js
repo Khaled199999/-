@@ -1,20 +1,34 @@
+let synth = window.speechSynthesis;
+let selectedVoice = null;
+
+function initVoices() {
+  let voices = synth.getVoices();
+  // ابحث عن صوت عربي
+  selectedVoice = voices.find(v => v.lang.includes('ar'));
+  if (!selectedVoice) {
+    console.log('🔴 لم يتم العثور على صوت عربي. سيتم استخدام الصوت الافتراضي.');
+  } else {
+    console.log('✅ تم العثور على صوت:', selectedVoice.name);
+  }
+}
+
+initVoices();
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = initVoices;
+}
+
 function speak(text) {
   const msg = new SpeechSynthesisUtterance(text);
   msg.lang = 'ar-SA';
-  window.speechSynthesis.speak(msg);
+  if (selectedVoice) {
+    msg.voice = selectedVoice;
+  }
+  synth.speak(msg);
 }
 
-function playLetter(letter) {
-  speak(letter);
-}
-
-function playWord(word) {
-  speak(word);
-}
-
-function playSentence(sentence) {
-  speak(sentence);
-}
+function playLetter(letter) { speak(letter); }
+function playWord(word) { speak(word); }
+function playSentence(sentence) { speak(sentence); }
 
 function checkAnswer(answer) {
   const result = document.getElementById('quizResult');
@@ -37,12 +51,13 @@ function checkGameWord() {
 }
 
 function finishAll() {
-  document.getElementById('certificate').style.display = 'block';
+  document.getElementById('certificate').classList.remove('d-none');
 }
 
 function showFinalCertificate() {
   const name = document.getElementById('childName').value.trim();
   if (name) {
-    document.getElementById('finalCert').innerHTML = '<h3>🌟 شهادة إتمام 🌟</h3><p>مبروك للطالب:</p><strong>' + name + '</strong>';
+    document.getElementById('finalCert').innerHTML =
+      '<h4>🌟 شهادة إتمام 🌟</h4><p>مبروك للطالب:</p><strong>' + name + '</strong>';
   }
 }
