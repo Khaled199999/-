@@ -18,12 +18,7 @@ if (speechSynthesis.onvoiceschanged !== undefined) {
 }
 
 function speak(text) {
-  const msg = new SpeechSynthesisUtterance(text);
-  msg.lang = 'ar-SA';
-  if (selectedVoice) {
-    msg.voice = selectedVoice;
-  }
-  synth.speak(msg);
+  responsiveVoice.speak(text, "Arabic Female");
 }
 
 function playLetter(letter) { speak(letter); }
