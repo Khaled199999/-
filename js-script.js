@@ -1,22 +1,3 @@
-let synth = window.speechSynthesis;
-let selectedVoice = null;
-
-function initVoices() {
-  let voices = synth.getVoices();
-  // ابحث عن صوت عربي
-  selectedVoice = voices.find(v => v.lang.includes('ar'));
-  if (!selectedVoice) {
-    console.log('🔴 لم يتم العثور على صوت عربي. سيتم استخدام الصوت الافتراضي.');
-  } else {
-    console.log('✅ تم العثور على صوت:', selectedVoice.name);
-  }
-}
-
-initVoices();
-if (speechSynthesis.onvoiceschanged !== undefined) {
-  speechSynthesis.onvoiceschanged = initVoices;
-}
-
 function speak(text) {
   responsiveVoice.speak(text, "Arabic Female");
 }
