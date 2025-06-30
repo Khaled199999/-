@@ -1,16 +1,19 @@
+function speak(text) {
+  const msg = new SpeechSynthesisUtterance(text);
+  msg.lang = 'ar-SA';
+  window.speechSynthesis.speak(msg);
+}
+
 function playLetter(letter) {
-  const audio = new Audio('audio/' + letter + '.mp3');
-  audio.play();
+  speak(letter);
 }
 
 function playWord(word) {
-  const audio = new Audio('audio/words/' + word + '.mp3');
-  audio.play();
+  speak(word);
 }
 
-function playSentence(sent) {
-  const audio = new Audio('audio/sentences/' + sent + '.mp3');
-  audio.play();
+function playSentence(sentence) {
+  speak(sentence);
 }
 
 function checkAnswer(answer) {
