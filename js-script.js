@@ -1,10 +1,22 @@
 function speak(text) {
-  responsiveVoice.speak(text, "Arabic Female");
+  const url = "https://translate.google.com/translate_tts?ie=UTF-8&q="
+    + encodeURIComponent(text)
+    + "&tl=ar&client=tw-ob";
+  const audio = new Audio(url);
+  audio.play();
 }
 
-function playLetter(letter) { speak(letter); }
-function playWord(word) { speak(word); }
-function playSentence(sentence) { speak(sentence); }
+function playLetter(letter) {
+  speak(letter);
+}
+
+function playWord(word) {
+  speak(word);
+}
+
+function playSentence(sentence) {
+  speak(sentence);
+}
 
 function checkAnswer(answer) {
   const result = document.getElementById('quizResult');
