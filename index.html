@@ -1,259 +1,77 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <link rel="stylesheet" href="css/style.css" />
-<header>
-  <h1>🌟 موقع تعليم اللغة العربية للأطفال 🌟</h1>
-  <nav>
-    <a href="#noorania">📚 القاعدة النورانية</a>
-    <a href="#words">📖 الكلمات اليومية</a>
-    <a href="#sentences">🗣️ الجُمل اليومية</a>
-    <a href="#quiz">📝 التمارين</a>
-    <a href="#game">🎮 الألعاب</a>
-    <a href="#certificate">📜 الشهادة</a>
-  </nav>
-</header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🌟 موقع تعليم اللغة العربية للأطفال 🌟</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
+  <header>
+    <h1>🌟 مرحباً بكم في موقعنا التعليمي 🌟</h1>
+    <nav>
+      <a href="#noorania">📚 القاعدة النورانية</a>
+      <a href="#words">📖 الكلمات</a>
+      <a href="#sentences">🗣️ الجُمل</a>
+      <a href="#quiz">📝 التمارين</a>
+      <a href="#game">🎮 الألعاب</a>
+      <a href="#certificate">📜 الشهادة</a>
+    </nav>
+  </header>
 
-  <section id="noorania">
-    <h2>📚 القاعدة النورانية</h2>
-    <p>مثال: حرف الألف</p>
-    <button onclick="playSound()">🔊 انطق الحرف</button>
-    <section id="noorania">
-  <h2>📚 القاعدة النورانية</h2>
-  <table>
-    <tr>
-      <th>الحرف</th>
-      <th>الاستماع</th>
-    </tr>
-    <tr><td>ا</td><td><button onclick="playLetter('alef')">🔊</button></td></tr>
-    <tr><td>ب</td><td><button onclick="playLetter('baa')">🔊</button></td></tr>
-    <tr><td>ت</td><td><button onclick="playLetter('taa')">🔊</button></td></tr>
-    <tr><td>ث</td><td><button onclick="playLetter('thaa')">🔊</button></td></tr>
-    <tr><td>ج</td><td><button onclick="playLetter('jeem')">🔊</button></td></tr>
-    <tr><td>ح</td><td><button onclick="playLetter('haa')">🔊</button></td></tr>
-    <tr><td>خ</td><td><button onclick="playLetter('khaa')">🔊</button></td></tr>
-    <tr><td>د</td><td><button onclick="playLetter('dal')">🔊</button></td></tr>
-    <tr><td>ذ</td><td><button onclick="playLetter('thal')">🔊</button></td></tr>
-    <tr><td>ر</td><td><button onclick="playLetter('raa')">🔊</button></td></tr>
-    <tr><td>ز</td><td><button onclick="playLetter('zaay')">🔊</button></td></tr>
-    <tr><td>س</td><td><button onclick="playLetter('seen')">🔊</button></td></tr>
-    <tr><td>ش</td><td><button onclick="playLetter('sheen')">🔊</button></td></tr>
-    <tr><td>ص</td><td><button onclick="playLetter('saad')">🔊</button></td></tr>
-    <tr><td>ض</td><td><button onclick="playLetter('daad')">🔊</button></td></tr>
-    <tr><td>ط</td><td><button onclick="playLetter('taa2')">🔊</button></td></tr>
-    <tr><td>ظ</td><td><button onclick="playLetter('zaa2')">🔊</button></td></tr>
-    <tr><td>ع</td><td><button onclick="playLetter('ain')">🔊</button></td></tr>
-    <tr><td>غ</td><td><button onclick="playLetter('ghain')">🔊</button></td></tr>
-    <tr><td>ف</td><td><button onclick="playLetter('faa')">🔊</button></td></tr>
-    <tr><td>ق</td><td><button onclick="playLetter('qaaf')">🔊</button></td></tr>
-    <tr><td>ك</td><td><button onclick="playLetter('kaaf')">🔊</button></td></tr>
-    <tr><td>ل</td><td><button onclick="playLetter('laam')">🔊</button></td></tr>
-    <tr><td>م</td><td><button onclick="playLetter('meem')">🔊</button></td></tr>
-    <tr><td>ن</td><td><button onclick="playLetter('noon')">🔊</button></td></tr>
-    <tr><td>ه</td><td><button onclick="playLetter('haa2')">🔊</button></td></tr>
-    <tr><td>و</td><td><button onclick="playLetter('waaw')">🔊</button></td></tr>
-    <tr><td>ي</td><td><button onclick="playLetter('yaa')">🔊</button></td></tr>
-    <tr><td>ء</td><td><button onclick="playLetter('hamza')">🔊</button></td></tr>
-  </table>
-</section>
+  <main>
+    <section id="noorania" class="card">
+      <h2>📚 القاعدة النورانية</h2>
+      <button onclick="playLetter('ألف')">🔊 ألف</button>
+      <button onclick="playLetter('باء')">🔊 باء</button>
+      <button onclick="playLetter('تاء')">🔊 تاء</button>
+      <!-- أكمل باقي الحروف بنفس الطريقة -->
+    </section>
 
-  <section id="words">
-  <h2>📖 الكلمات اليومية</h2>
-  <table>
-    <tr><th>الكلمة</th><th>الاستماع</th></tr>
+    <section id="words" class="card">
+      <h2>📖 الكلمات اليومية</h2>
+      <button onclick="playWord('تفاحة')">🔊 تفاحة</button>
+      <button onclick="playWord('برتقالة')">🔊 برتقالة</button>
+      <button onclick="playWord('كتاب')">🔊 كتاب</button>
+      <!-- أضف جميع كلماتك هنا -->
+    </section>
 
-    <!-- أطعمة ومشروبات -->
-    <tr><td>تفاحة</td><td><button onclick="playWord('apple')">🔊</button></td></tr>
-    <tr><td>برتقالة</td><td><button onclick="playWord('orange')">🔊</button></td></tr>
-    <tr><td>موز</td><td><button onclick="playWord('banana')">🔊</button></td></tr>
-    <tr><td>حليب</td><td><button onclick="playWord('milk')">🔊</button></td></tr>
-    <tr><td>ماء</td><td><button onclick="playWord('water')">🔊</button></td></tr>
-    <tr><td>خبز</td><td><button onclick="playWord('bread')">🔊</button></td></tr>
-    <tr><td>بيض</td><td><button onclick="playWord('egg')">🔊</button></td></tr>
-    <tr><td>جبن</td><td><button onclick="playWord('cheese')">🔊</button></td></tr>
-    <tr><td>دجاج</td><td><button onclick="playWord('chicken')">🔊</button></td></tr>
-    <tr><td>سمك</td><td><button onclick="playWord('fish')">🔊</button></td></tr>
-    <tr><td>لحم</td><td><button onclick="playWord('meat')">🔊</button></td></tr>
-    <tr><td>عسل</td><td><button onclick="playWord('honey')">🔊</button></td></tr>
-    <tr><td>شاي</td><td><button onclick="playWord('tea')">🔊</button></td></tr>
-    <tr><td>قهوة</td><td><button onclick="playWord('coffee')">🔊</button></td></tr>
-    <tr><td>ملح</td><td><button onclick="playWord('salt')">🔊</button></td></tr>
-    <tr><td>سكر</td><td><button onclick="playWord('sugar')">🔊</button></td></tr>
+    <section id="sentences" class="card">
+      <h2>🗣️ الجُمل اليومية</h2>
+      <button onclick="playSentence('السلام عليكم')">🔊 السلام عليكم</button>
+      <button onclick="playSentence('كيف حالك؟')">🔊 كيف حالك؟</button>
+      <button onclick="playSentence('أنا بخير شكراً')">🔊 أنا بخير شكراً</button>
+    </section>
 
-    <!-- خضروات وفواكه -->
-    <tr><td>خيار</td><td><button onclick="playWord('cucumber')">🔊</button></td></tr>
-    <tr><td>طماطم</td><td><button onclick="playWord('tomato')">🔊</button></td></tr>
-    <tr><td>بطاطس</td><td><button onclick="playWord('potato')">🔊</button></td></tr>
-    <tr><td>جزر</td><td><button onclick="playWord('carrot')">🔊</button></td></tr>
-    <tr><td>بصل</td><td><button onclick="playWord('onion')">🔊</button></td></tr>
-    <tr><td>فلفل</td><td><button onclick="playWord('pepper')">🔊</button></td></tr>
-    <tr><td>ليمون</td><td><button onclick="playWord('lemon')">🔊</button></td></tr>
-    <tr><td>فراولة</td><td><button onclick="playWord('strawberry')">🔊</button></td></tr>
-    <tr><td>عنب</td><td><button onclick="playWord('grape')">🔊</button></td></tr>
-    <tr><td>بطيخ</td><td><button onclick="playWord('watermelon')">🔊</button></td></tr>
-    <tr><td>شمام</td><td><button onclick="playWord('melon')">🔊</button></td></tr>
+    <section id="quiz" class="card">
+      <h2>📝 تمرين</h2>
+      <p>ما جمع كلمة كتاب؟</p>
+      <button onclick="checkAnswer('دفتر')">دفتر</button>
+      <button onclick="checkAnswer('كتب')">كتب</button>
+      <button onclick="checkAnswer('قلم')">قلم</button>
+      <p id="quizResult"></p>
+    </section>
 
-    <!-- حيوانات وطيور -->
-    <tr><td>قطة</td><td><button onclick="playWord('cat')">🔊</button></td></tr>
-    <tr><td>كلب</td><td><button onclick="playWord('dog')">🔊</button></td></tr>
-    <tr><td>عصفور</td><td><button onclick="playWord('bird')">🔊</button></td></tr>
-    <tr><td>حصان</td><td><button onclick="playWord('horse')">🔊</button></td></tr>
-    <tr><td>جمل</td><td><button onclick="playWord('camel')">🔊</button></td></tr>
-    <tr><td>بقرة</td><td><button onclick="playWord('cow')">🔊</button></td></tr>
-    <tr><td>غنم</td><td><button onclick="playWord('sheep')">🔊</button></td></tr>
-    <tr><td>ديك</td><td><button onclick="playWord('rooster')">🔊</button></td></tr>
-    <tr><td>دجاجة</td><td><button onclick="playWord('hen')">🔊</button></td></tr>
-    <tr><td>سمكة</td><td><button onclick="playWord('fish2')">🔊</button></td></tr>
-    
-    <!-- أدوات وأشياء -->
-    <tr><td>كتاب</td><td><button onclick="playWord('book')">🔊</button></td></tr>
-    <tr><td>دفتر</td><td><button onclick="playWord('notebook')">🔊</button></td></tr>
-    <tr><td>قلم</td><td><button onclick="playWord('pen')">🔊</button></td></tr>
-    <tr><td>ممحاة</td><td><button onclick="playWord('eraser')">🔊</button></td></tr>
-    <tr><td>مسطرة</td><td><button onclick="playWord('ruler')">🔊</button></td></tr>
-    <tr><td>حقيبة</td><td><button onclick="playWord('bag')">🔊</button></td></tr>
-    <tr><td>كرسي</td><td><button onclick="playWord('chair')">🔊</button></td></tr>
-    <tr><td>طاولة</td><td><button onclick="playWord('table')">🔊</button></td></tr>
-    <tr><td>باب</td><td><button onclick="playWord('door')">🔊</button></td></tr>
-    <tr><td>نافذة</td><td><button onclick="playWord('window')">🔊</button></td></tr>
+    <section id="game" class="card">
+      <h2>🎮 لعبة تكوين كلمات</h2>
+      <p>كوّن كلمات من: ب ح ر</p>
+      <input type="text" id="wordInput" placeholder="أدخل كلمة">
+      <button onclick="checkGameWord()">تحقق</button>
+      <p id="gameResult"></p>
+    </section>
 
-    <!-- ملابس وألوان -->
-    <tr><td>قميص</td><td><button onclick="playWord('shirt')">🔊</button></td></tr>
-    <tr><td>بنطال</td><td><button onclick="playWord('pants')">🔊</button></td></tr>
-    <tr><td>حذاء</td><td><button onclick="playWord('shoes')">🔊</button></td></tr>
-    <tr><td>قبعة</td><td><button onclick="playWord('hat')">🔊</button></td></tr>
-    <tr><td>معطف</td><td><button onclick="playWord('coat')">🔊</button></td></tr>
-    <tr><td>أسود</td><td><button onclick="playWord('black')">🔊</button></td></tr>
-    <tr><td>أبيض</td><td><button onclick="playWord('white')">🔊</button></td></tr>
-    <tr><td>أحمر</td><td><button onclick="playWord('red')">🔊</button></td></tr>
-    <tr><td>أزرق</td><td><button onclick="playWord('blue')">🔊</button></td></tr>
-    <tr><td>أخضر</td><td><button onclick="playWord('green')">🔊</button></td></tr>
+    <section id="certificate" class="card" style="display:none;">
+      <h2>🎉 شهادة نجاح</h2>
+      <p>أدخل اسمك:</p>
+      <input type="text" id="childName" placeholder="اسم الطفل">
+      <button onclick="showFinalCertificate()">عرض الشهادة</button>
+      <div id="finalCert"></div>
+    </section>
 
-    <!-- أماكن وبلدان -->
-    <tr><td>بيت</td><td><button onclick="playWord('house')">🔊</button></td></tr>
-    <tr><td>مدرسة</td><td><button onclick="playWord('school')">🔊</button></td></tr>
-    <tr><td>مسجد</td><td><button onclick="playWord('mosque')">🔊</button></td></tr>
-    <tr><td>مستشفى</td><td><button onclick="playWord('hospital')">🔊</button></td></tr>
-    <tr><td>مطار</td><td><button onclick="playWord('airport')">🔊</button></td></tr>
-    <tr><td>مكة</td><td><button onclick="playWord('mecca')">🔊</button></td></tr>
-    <tr><td>المدينة</td><td><button onclick="playWord('madinah')">🔊</button></td></tr>
-    <tr><td>الرياض</td><td><button onclick="playWord('riyadh')">🔊</button></td></tr>
-    <tr><td>القاهرة</td><td><button onclick="playWord('cairo')">🔊</button></td></tr>
-    <tr><td>دمشق</td><td><button onclick="playWord('damascus')">🔊</button></td></tr>
+    <button onclick="finishAll()" class="finish-btn">✅ أنهيت المراحل</button>
+  </main>
 
-    <!-- كلمات يومية إضافية -->
-    <tr><td>أب</td><td><button onclick="playWord('father')">🔊</button></td></tr>
-    <tr><td>أم</td><td><button onclick="playWord('mother')">🔊</button></td></tr>
-    <tr><td>أخ</td><td><button onclick="playWord('brother')">🔊</button></td></tr>
-    <tr><td>أخت</td><td><button onclick="playWord('sister')">🔊</button></td></tr>
-    <tr><td>طفل</td><td><button onclick="playWord('child')">🔊</button></td></tr>
-    <tr><td>صديق</td><td><button onclick="playWord('friend')">🔊</button></td></tr>
-    <tr><td>كتاب</td><td><button onclick="playWord('book2')">🔊</button></td></tr>
-    <tr><td>وقت</td><td><button onclick="playWord('time')">🔊</button></td></tr>
-    <tr><td>يوم</td><td><button onclick="playWord('day')">🔊</button></td></tr>
-    <tr><td>ليل</td><td><button onclick="playWord('night')">🔊</button></td></tr>
-    <tr><td>شمس</td><td><button onclick="playWord('sun')">🔊</button></td></tr>
-    <tr><td>قمر</td><td><button onclick="playWord('moon')">🔊</button></td></tr>
-    <tr><td>نجمة</td><td><button onclick="playWord('star')">🔊</button></td></tr>
-    <tr><td>سماء</td><td><button onclick="playWord('sky')">🔊</button></td></tr>
-    <tr><td>بحر</td><td><button onclick="playWord('sea')">🔊</button></td></tr>
-    <tr><td>نهر</td><td><button onclick="playWord('river')">🔊</button></td></tr>
-    <tr><td>جبل</td><td><button onclick="playWord('mountain')">🔊</button></td></tr>
-    <tr><td>طريق</td><td><button onclick="playWord('road')">🔊</button></td></tr>
-    <tr><td>سيارة</td><td><button onclick="playWord('car')">🔊</button></td></tr>
-    <tr><td>دراجة</td><td><button onclick="playWord('bicycle')">🔊</button></td></tr>
-  </table>
-
-<section id="sentences">
-  <h2>🗣️ الجُمل اليومية</h2>
-  <table>
-    <tr><th>الجُملة</th><th>استماع</th></tr>
-    <tr><td>السلام عليكم</td><td><button onclick="playSentence('greeting1')">🔊</button></td></tr>
-    <tr><td>كيف حالك؟</td><td><button onclick="playSentence('greeting2')">🔊</button></td></tr>
-    <tr><td>أنا بخير، شكراً.</td><td><button onclick="playSentence('greeting3')">🔊</button></td></tr>
-    <tr><td>ما اسمك؟</td><td><button onclick="playSentence('greeting4')">🔊</button></td></tr>
-    <tr><td>إلى اللقاء!</td><td><button onclick="playSentence('greeting5')">🔊</button></td></tr>
-  </table>
-</section>
-
-<section id="quiz">
-  <h2>📝 تمرين تفاعلي</h2>
-  <p>ما هو جمع كلمة "كتاب"؟</p>
-  <button onclick="checkAnswer('دفتر')">دفتر</button>
-  <button onclick="checkAnswer('كتب')">كتب</button>
-  <button onclick="checkAnswer('قلم')">قلم</button>
-  <p id="quizResult"></p>
-</section>
-
-<section id="game">
-  <h2>🎮 لعبة تكوين كلمات</h2>
-  <p>كوّن أكبر عدد كلمات من الحروف: ب ح ر</p>
-  <input type="text" id="wordInput" placeholder="أدخل كلمة">
-  <button onclick="checkGameWord()">تحقّق</button>
-  <p id="gameResult"></p>
-</section>
-
-<section id="certificate" style="display:none;">
-  <h2>🎉 تهانينا!</h2>
-  <p>لقد أكملت جميع المراحل بنجاح!</p>
-  <p>أدخل اسمك للحصول على الشهادة:</p>
-  <input type="text" id="childName" placeholder="اسم الطفل">
-  <button onclick="showFinalCertificate()">عرض الشهادة</button>
-  <div id="finalCert"></div>
-</section>
-
-<button onclick="finishAll()">✅ أنهيت جميع المراحل</button>
-  </section>
-
-  <button onclick="showCertificate()">🎓 إنهاء المراحل</button>
-
-  <script src="js/script.js">
-    function playLetter(letter) {
-  const audio = new Audio('audio/' + letter + '.mp3');
-  audio.play();
-}
-    function playWord(word) {
-  const audio = new Audio('audio/words/' + word + '.mp3');
-  audio.play();
-}
-
-    function playSentence(sent) {
-  const audio = new Audio('audio/sentences/' + sent + '.mp3');
-  audio.play();
-}
-
-function checkAnswer(answer) {
-  const result = document.getElementById('quizResult');
-  if (answer === 'كتب') {
-    result.textContent = 'إجابة صحيحة! ✔️';
-  } else {
-    result.textContent = 'إجابة خاطئة! ❌ حاول مرة أخرى.';
-  }
-}
-
-function checkGameWord() {
-  const input = document.getElementById('wordInput').value.trim();
-  const validWords = ['بحر', 'حبر', 'برح', 'ربح', 'بر', 'بح', 'حب', 'حر'];
-  const result = document.getElementById('gameResult');
-  if (validWords.includes(input)) {
-    result.textContent = 'كلمة صحيحة! ✔️';
-  } else {
-    result.textContent = 'جرب مرة أخرى.';
-  }
-}
-
-function finishAll() {
-  document.getElementById('certificate').style.display = 'block';
-}
-
-function showFinalCertificate() {
-  const name = document.getElementById('childName').value.trim();
-  if (name) {
-    document.getElementById('finalCert').innerHTML =
-      '<h3>🌟 شهادة إتمام 🌟</h3><p>نُقدّم هذه الشهادة للطالب:</p><strong>' + name + '</strong>';
-  }
-}
-
-  </script>
+  <script src="js-script.js"></script>
 </body>
 </html>
